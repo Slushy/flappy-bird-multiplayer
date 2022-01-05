@@ -152,7 +152,7 @@ class Game {
         this.pipeTimeout = null;
         this.pipes = [];
 
-        this.currentDifficulty = 'normal';
+        this.currentDifficulty = 'hard';
         this.difficulties = {
             easy: {
                 pipeHorizontalDistanceRange: [500, 550],
@@ -163,8 +163,8 @@ class Game {
                 pipeVerticalDistanceRange: [140, 200],
             },
             hard: {
-                pipeHorizontalDistanceRange: [280, 320],
-                pipeVerticalDistanceRange: [120, 160],
+                pipeHorizontalDistanceRange: [300, 350],
+                pipeVerticalDistanceRange: [130, 180],
             },
         };
     }
