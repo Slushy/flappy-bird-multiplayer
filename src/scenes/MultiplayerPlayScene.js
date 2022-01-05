@@ -164,10 +164,10 @@ class MultiplayerPlayScene extends BaseScene {
         let scoreText = null;
 
         if (player.id === this.playerId) {
-            scoreText = this.add.text(16, 16, `${player.name}: ${player.score}`, { fontSize: '26px', color: '#000' });
+            scoreText = this.add.text(16, 16, `${player.name}: ${player.score}`, { fontSize: '22px', color: '#000' });
         } else {
-            scoreText = this.add.text(16, 48, `${player.name}: ${player.score}`, {
-                fontSize: '18px',
+            scoreText = this.add.text(16, 45, `${player.name}: ${player.score}`, {
+                fontSize: '16px',
                 color: '#000',
             });
         }
@@ -239,9 +239,8 @@ class MultiplayerPlayScene extends BaseScene {
     updateScorePositions() {
         let i = 0;
         for (let [id, { scoreText }] of this.otherPlayers) {
-            scoreText.setY(48 + i * 20);
+            scoreText.setY(45 + i * 18);
             i++;
-            
         }
     }
 
