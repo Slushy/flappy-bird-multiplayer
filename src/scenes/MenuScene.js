@@ -5,10 +5,14 @@ export default class MenuScene extends BaseScene {
         super('MenuScene', config);
         
         this.menu = [
-            { scene: 'PlayScene', text: 'Play' },
+            { scene: 'PlayScene', text: 'Solo' },
+            { scene: 'MultiplayerPlayScene', text: 'Multiplayer' },
             { scene: 'ScoreScene', text: 'Score' },
-            { scene: null, text: 'Exit' },
         ]
+    }
+
+    init({ socket }) {
+        this.socket = socket;
     }
 
     create() {
@@ -30,7 +34,7 @@ export default class MenuScene extends BaseScene {
         })
 
         textGO.on('pointerup', () => {
-            menuItem.scene ? this.scene.start(menuItem.scene) : this.game.destroy(true);
+            menuItem.scene ? this.scene.start(menuItem.scene, { socket: this.socket }) : this.game.destroy(true);
         })
     }
 }

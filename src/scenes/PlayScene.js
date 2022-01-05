@@ -35,6 +35,10 @@ class PlayScene extends BaseScene {
         };
     }
 
+    init({ socket }) {
+        this.socket = socket;
+    }
+
     create() {
         super.create();
         this.currentDifficulty = 'easy';
@@ -162,7 +166,7 @@ class PlayScene extends BaseScene {
         const pipeVerticalDistance = Phaser.Math.Between(...difficulty.pipeVerticalDistanceRange);
         const pipeVerticalPosition = Phaser.Math.Between(0 + 20, this.config.height - 20 - pipeVerticalDistance);
         const pipeHorizontalDistance = Phaser.Math.Between(...difficulty.pipeHorizontalDistanceRange);
-
+        
         uPipe.x = rightMostX + pipeHorizontalDistance;
         uPipe.y = pipeVerticalPosition;
 

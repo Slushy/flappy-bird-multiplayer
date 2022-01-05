@@ -1,9 +1,10 @@
 import Phaser from 'phaser';
 
 export default class BaseScene extends Phaser.Scene {
-    constructor(key, config) {
+    constructor(key, config, socket) {
         super(key);
         this.config = config;
+        this.socket = socket;
         this.screenCenter = [config.width / 2, config.height / 2];
         this.fontSize = 34;
         this.lineHeight = 42;

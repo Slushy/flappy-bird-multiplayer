@@ -4,6 +4,7 @@ import MenuScene from './scenes/MenuScene';
 import PlayScene from './scenes/PlayScene';
 import ScoreScene from './scenes/ScoreScene';
 import PauseScene from './scenes/PauseScene';
+import MultiplayerPlayScene from './scenes/MultiplayerPlayScene';
 
 const WIDTH = 400;
 const HEIGHT = 600;
@@ -14,7 +15,7 @@ const SHARED_CONFIG = {
     startPosition: BIRD_POSITION,
 };
 
-const scenes = [PreloadScene, MenuScene, PlayScene, ScoreScene, PauseScene];
+const scenes = [PreloadScene, MenuScene, PlayScene, MultiplayerPlayScene, ScoreScene, PauseScene];
 const createScene = Scene => new Scene(SHARED_CONFIG);
 const initScenes = () => scenes.map(createScene);
 

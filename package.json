@@ -4,14 +4,21 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "start": "node server.js",
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack --config webpack.prod.js",
+        "watch": "webpack --config webpack.common.js --watch",
         "dev": "webpack-dev-server --config webpack.common.js --watch"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@geckos.io/phaser-on-nodejs": "^1.2.7",
+        "@geckos.io/snapshot-interpolation": "^1.1.0",
+        "express": "^4.17.2",
         "phaser": "^3.55.2",
+        "socket.io": "^4.4.0",
+        "socket.io-client": "^4.4.0",
         "webpack-merge": "^5.1.4"
     },
     "devDependencies": {

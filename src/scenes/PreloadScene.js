@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
-
+import io from 'socket.io-client';
+ 
 export default class PreloadScene extends Phaser.Scene {
     constructor() {
         super('PreloadScene');
@@ -17,6 +18,10 @@ export default class PreloadScene extends Phaser.Scene {
     }
 
     create() {
-        this.scene.start('MenuScene');
+        const socket = io();
+        socket.on('connect', () => {
+        	console.log('Connected!');
+            this.scene.start('MenuScene', { socket });
+        });
     }
 }
