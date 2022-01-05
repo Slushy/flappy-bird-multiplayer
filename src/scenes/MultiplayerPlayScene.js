@@ -126,7 +126,7 @@ class MultiplayerPlayScene extends BaseScene {
     createPlayer(player) {
         const bird = this.createBird(player);
         const scoreText = this.createScore(player);
-
+        scoreText.depth = 1;
         if (player.id === this.playerId) {
             this.playerStatus = player.status;
             this.bird = bird;
@@ -268,6 +268,7 @@ class MultiplayerPlayScene extends BaseScene {
     handleGameStatusChange(statusData) {
         if (!this.centerText) {
             this.centerText = this.add.text(...this.screenCenter, '', this.fontOptions).setOrigin(0.5);
+            this.centerText.depth = 1;
         }
 
         switch (this.gameStatus) {
@@ -289,6 +290,7 @@ class MultiplayerPlayScene extends BaseScene {
                 if (this.canPlay) {
                     // this.bird.setActive(true);
                     this.centerText.setText(`Flying in: ${statusData.timeRemaining}`);
+                    
                 }
                 if (statusData.pipes) {
                     for (let i = 0; i < statusData.pipes.length; i += 2) {
