@@ -241,6 +241,7 @@ class MultiplayerPlayScene extends BaseScene {
         for (let [id, { scoreText }] of this.otherPlayers) {
             scoreText.setY(48 + i * 20);
             i++;
+            
         }
     }
 
@@ -306,7 +307,7 @@ class MultiplayerPlayScene extends BaseScene {
                 for (let [id, { bird }] of this.otherPlayers) {
                     // bird.setActive(true);
                     bird.play('fly');
-                    bird.setAlpha(0.4);
+                    bird.setAlpha(0.3);
                 }
 
                 if (this.canPlay) {
