@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import io from 'socket.io-client';
- 
+
 export default class PreloadScene extends Phaser.Scene {
     constructor() {
         super('PreloadScene');
@@ -18,9 +18,9 @@ export default class PreloadScene extends Phaser.Scene {
     }
 
     create() {
-        const socket = io();
+        const socket = io('//flapp-bird.herokuapp.com');
         socket.on('connect', () => {
-        	console.log('Connected!');
+            console.log('Connected!');
             this.scene.start('MenuScene', { socket });
         });
     }

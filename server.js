@@ -17,10 +17,10 @@ const server = require('http')
 
 // Instantiate Socket.IO hand have it listen on the Express/HTTP server
 const io = require('socket.io')(server, {
-    logLevel: 1,
+    cors: {
+        origin: '*',
+    }
 });
-
-// io.set('log level', 1);
 
 // Listen for Socket.IO Connections. Once connected, start the game logic.
 io.on('connection', function (socket) {
