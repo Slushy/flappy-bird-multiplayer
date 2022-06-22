@@ -1,6 +1,6 @@
 {
   "name": "@slushy/flappy-bird-multiplayer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "setup.js",
   "webapp": true,
