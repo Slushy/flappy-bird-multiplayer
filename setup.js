@@ -2,12 +2,15 @@ const path = require('path');
 const express = require('express');
 const game = require('./game');
 
-function setupApp(app) {
-  app.use('/', express.static(__dirname + '/build'));
+function getAppRouter() {
+  const router = express.Router();
+  router.use('/', express.static(__dirname + '/build'));
 
-  app.get('/', function (request, response) {
+  router.get('/', function (request, response) {
     response.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
+
+  return router;
 }
 
 function setupSocket(io) {
@@ -18,9 +21,10 @@ function setupSocket(io) {
   });
 }
 
-function setup(app, io) {
-  setupApp(app);
+async function setup({ io }) {
   setupSocket(io);
+
+  return getAppRouter();
 }
 
 module.exports = setup;
