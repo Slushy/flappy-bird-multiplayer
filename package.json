@@ -1,5 +1,5 @@
 {
-  "name": "flappy-bird-multiplayer",
+  "name": "@slushy/flappy-bird-multiplayer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,8 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",
     "watch": "webpack --config webpack.common.js --watch",
-    "dev": "webpack-dev-server --config webpack.common.js --watch",
-    "prepare": "yarn run build"
+    "dev": "webpack-dev-server --config webpack.common.js --watch"
   },
   "author": "",
   "license": "ISC",
