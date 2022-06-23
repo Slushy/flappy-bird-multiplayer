@@ -10,10 +10,6 @@ const server = require('http')
   });
 
 // Instantiate Socket.IO hand have it listen on the Express/HTTP server
-const io = require('socket.io')(server, {
-  cors: {
-    origin: '*',
-  },
-});
+const io = require('socket.io')(server);
 
-setup(app, io);
+setup({ app, io }).then((router) => app.use(router));

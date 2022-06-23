@@ -14,10 +14,12 @@ function getAppRouter() {
 }
 
 function setupSocket(io) {
+  const server = io.of('/flappy-bird');
+
   // Listen for Socket.IO Connections. Once connected, start the game logic.
-  io.on('connection', function (socket) {
+  server.on('connection', function (socket) {
     //console.log('client connected');
-    game.initGame(io, socket);
+    game.initGame(server, socket);
   });
 }
 
